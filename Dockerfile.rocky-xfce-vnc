@@ -57,6 +57,8 @@ ADD ./src/common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 RUN $INST_SCRIPTS/rocky.sh
 
+RUN dnf install python3.11 -y
+
 USER 1000
 
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
